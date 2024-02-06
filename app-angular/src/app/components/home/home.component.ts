@@ -13,9 +13,9 @@ export class HomeComponent {
     this.api.getMessage().subscribe(message =>{
       console.log(JSON.stringify(message))
     })
-    this.api.insertUser().subscribe(message =>{
+    // this.api.insertUser().subscribe(message =>{
     
-    })
+    // })
   }
 
 }

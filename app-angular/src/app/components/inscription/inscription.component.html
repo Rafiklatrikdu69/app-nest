@@ -4,7 +4,7 @@
         <label>Entrez votre pseudo</label>
         <input type="text" name="pseudo" value="Votre pseudo" [(ngModel)]="form.pseudo" #pseudo ="ngModel"/>
         <div class="form-error" *ngIf="pseudo.errors && f.submitted">Pseudo requis !</div>
-        <input type="submit">
+        <input type="submit" value="Valider">
 
     </form>
 </div>

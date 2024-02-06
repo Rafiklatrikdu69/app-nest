@@ -13,8 +13,9 @@ export class UserController {
    // eslint-disable-next-line prettier/prettier
   create(@Body() createUserDto: CreateUserDto) {
  
+      return this.userService.create(createUserDto);
     
-    return this.userService.create(createUserDto);
+   
   }
 
   @Get()
@@ -24,7 +25,7 @@ export class UserController {
 
   @Get('/get/:id')
   findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
+    return this.userService.findOne(id);
   }
 
   @Patch(':id')

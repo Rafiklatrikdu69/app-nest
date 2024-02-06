@@ -3,11 +3,11 @@ import { ApiService } from '../../modules/app-module/services/api.service';
 import { User } from '../../modules/app-module/models/User';
 
 @Component({
-  selector: 'app-connexion',
-  templateUrl: './connexion.component.html',
-  styleUrl: './connexion.component.scss'
+  selector: 'app-inscription',
+  templateUrl: './inscription.component.html',
+  styleUrl: './inscription.component.scss'
 })
-export class ConnexionComponent {
+export class InscriptionComponent {
   constructor(private api :ApiService){}
   form:any={
     pseudo: null,
