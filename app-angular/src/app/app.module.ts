@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import { InscriptionComponent } from './components/inscription/inscription.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

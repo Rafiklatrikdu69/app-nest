@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Session } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -7,15 +7,15 @@ import { User } from './entities/user.entity';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  private sessionData: Record<string, any>;
+
+  constructor(private readonly userService: UserService) {
+ 
+  }
 
   @Post("/create-user")
-   // eslint-disable-next-line prettier/prettier
   create(@Body() createUserDto: CreateUserDto) {
- 
-      return this.userService.create(createUserDto);
-    
-   
+    return this.userService.create(createUserDto);
   }
 
   @Get()
@@ -23,9 +23,21 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get('/get/:id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(id);
+  @Get('/get/:id/:password')
+  findOne(@Param('id') id: string,@Param('password') password: string) {
+    return this.userService.findOne(id,password);
+  }
+
+  @Get('/session')
+  getSession() {
+    return this.sessionData;
+  }
+
+  @Post('/session/:id')
+  addSession(@Session() session: Record<string, any>, @Param('id') id: string) {
+    session.myData = { id: id };
+    this.sessionData = session;
+   return {session:"demmarrage de la session !"}
   }
 
   @Patch(':id')
