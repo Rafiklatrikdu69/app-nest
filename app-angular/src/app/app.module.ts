@@ -8,6 +8,7 @@ import { ConnexionComponent } from './components/connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { ArticleComponent } from './components/article/article.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ArticleComponent } from './components/article/article.component';
     HomeComponent,
     ConnexionComponent,
     InscriptionComponent,
-    ArticleComponent
+    ArticleComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

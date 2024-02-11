@@ -21,10 +21,10 @@ export class ConnexionComponent {
   }
   value: string = 'Initial value';
   ngOnInit(): void {
-  
-    this.api.getSession().subscribe(data =>{
-      console.log(data)
-    })
+    //  this.api.deleteSession().subscribe(data => {
+        
+    //  })
+    
    
   }
 

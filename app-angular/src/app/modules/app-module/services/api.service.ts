@@ -21,12 +21,15 @@ export class ApiService {
     console.log(u.name)
     return this.http.get(this.url+"user/get/"+u.name+"/"+u.password)
   }
-  getSession(){
+  getSession():Observable<any>{
 
     return this.http.get(this.url+"user/session",{ withCredentials: true })
   }
   addSession(session:string){
 
     return this.http.post(this.url+"user/session/"+session,{ withCredentials: true })
+  }
+  deleteSession(){
+    return this.http.delete(this.url+'user/session/remove',{withCredentials :true});
   }
 }

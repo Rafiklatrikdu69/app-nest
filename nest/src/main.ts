@@ -6,14 +6,14 @@ import * as session from 'express-session';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
-  // Configuration du middleware de session
+
   app.use(session({ 
-    secret: 'nest is awesome', // Clé secrète pour signer les cookies de session
+    secret: 'nest cest trop bien !!!!!!!!', 
     resave: false,
     saveUninitialized: false,
   }));
 
-  // Activer CORS avec prise en charge des cookies de session
+
   app.enableCors({
     credentials: true,
     origin: true,

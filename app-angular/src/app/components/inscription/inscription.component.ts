@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, SimpleChanges } from '@angular/core';
 import { ApiService } from '../../modules/app-module/services/api.service';
 import { User } from '../../modules/app-module/models/User';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -9,7 +10,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
   styleUrl: './inscription.component.scss'
 })
 export class InscriptionComponent {
-  constructor(private api :ApiService,private cdr: ChangeDetectorRef){}
+  constructor(private api :ApiService,private cdr: ChangeDetectorRef,private router :Router) {}
   items: any[] = ['Item 1', 'Item 2', 'Item 3'];
   data$!:Observable<any>
   private dataSubscription: Subscription | undefined;
@@ -32,9 +33,11 @@ export class InscriptionComponent {
       this.dataSubscription = this.data$.subscribe(data=>{
         console.log(data)
         if(!data){
-          this.api.insertUser(u).subscribe(data =>{
-            
-          })
+          console.log("pas present !")
+         this.api.insertUser(u).subscribe(data =>{
+           
+         })
+          this.router.navigate(['/connexion']);
         }
       })
       
