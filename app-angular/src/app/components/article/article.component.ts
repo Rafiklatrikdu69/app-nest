@@ -21,6 +21,11 @@ export class ArticleComponent {
         this.router.navigate(['/connexion'])
       }
     })
+
+    this.data$ = this.api.getInfo()
+    this.dataSubscription = this.data$.subscribe(data=>{
+      console.log(data)
+    })
   }
   ngOnDestroy(): void {
     if (this.dataSubscription) {

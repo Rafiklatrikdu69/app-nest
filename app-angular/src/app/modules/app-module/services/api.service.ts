@@ -32,4 +32,7 @@ export class ApiService {
   deleteSession(){
     return this.http.delete(this.url+'user/session/remove',{withCredentials :true});
   }
+  getInfo(){
+    return this.http.get("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo")
+  }
 }
