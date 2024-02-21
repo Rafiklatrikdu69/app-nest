@@ -8,7 +8,6 @@ import { ConnexionComponent } from './components/connexion/connexion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { ArticleComponent } from './components/article/article.component';
-import { FormComponent } from './components/form/form.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
@@ -23,7 +22,6 @@ import { BourseDisplayComponent } from './components/bourse-display/bourse-displ
     ConnexionComponent,
     InscriptionComponent,
     ArticleComponent,
-    FormComponent,
     BourseDisplayComponent
   ],
   imports: [

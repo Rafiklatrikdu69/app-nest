@@ -12,19 +12,16 @@ import { Router } from '@angular/router';
 })
 export class ConnexionComponent {
   constructor(private api :ApiService,private cdr: ChangeDetectorRef,private router:Router){}
-  items: any[] = ['Item 1', 'Item 2', 'Item 3'];
+
   data$!:Observable<any>
   private dataSubscription: Subscription | undefined;
   form:any={
     pseudo: null,
     password:null
   }
-  value: string = 'Initial value';
+
   ngOnInit(): void {
-    //  this.api.deleteSession().subscribe(data => {
-        
-    //  })
-    
+ 
    
   }
 
@@ -41,7 +38,7 @@ export class ConnexionComponent {
           
         }else{
          this.api.addSession(this.form.pseudo).subscribe()
-         this.router.navigate(['/article'])
+         this.router.navigate(['/bourse'])
         }
       })
       
